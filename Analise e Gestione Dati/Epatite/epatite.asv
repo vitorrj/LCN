@@ -1,0 +1,15 @@
+clear all
+close all
+
+tabella = readtable('hcvdat0.csv');
+dati    = tabella(:,[2 3 5:end]);
+
+rows = size(dati,1);
+coll = size(dati,2);
+
+
+for i=1:coll
+    figure
+    histogram(dati.(i))
+end
+
