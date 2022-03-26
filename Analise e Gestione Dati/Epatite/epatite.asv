@@ -1,15 +1,20 @@
 clear all
 close all
 
-tabella = readtable('hcvdat0.csv');
-dati    = tabella(:,[2 3 5:end]);
+load("dati_malati.mat");
 
-rows = size(dati,1);
-coll = size(dati,2);
+D = hcvdat1;
+
+n = size(D,1);      % Numero di pazienti
+f = size(D,2);      % Numero di features: età, malato etc
+
+% Vorrei vedere l'istograma
+% for i=1:f
+%     figure
+%     histogram(D(:,i));
+% end
 
 
-for i=1:coll
-    figure
-    histogram(dati.(i))
-end
-
+for i=1
+figure
+plot(D(:,1), D(:,3), 'o')
